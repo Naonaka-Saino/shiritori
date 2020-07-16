@@ -1,8 +1,11 @@
 <div class="container">
     <%= 'しりとり' %>
     
+    wikipediaに存在する項目
+    
     <%= form_with url: toppages_path, method: :get, local: true do |f| %>
     <%= f.text_field :shiritori_code, class: "index_form", placeholder:"言葉" %>
+    <%= f.submit value='回答' %>
     
     <% end %>
     
