@@ -17,9 +17,13 @@ class ToppagesController < ApplicationController
     
     results = JSON.parse(res.body)
     @title=[]
+    if results.nil?
+      @title = "該当結果なし"
+    else
     results.each do |res|
     title= res["title"].to_s
     @title.push(title)
+    end
     end
     puts @title
     end
